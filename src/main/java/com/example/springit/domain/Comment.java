@@ -3,10 +3,15 @@ package com.example.springit.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.Objects;
+
+
 
 @Entity
+@Data
+@NoArgsConstructor
 public class Comment {
 
     @Id
@@ -16,44 +21,4 @@ public class Comment {
 
     //link
 
-
-    public Comment() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "id=" + id +
-                ", body='" + body + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Comment comment = (Comment) o;
-        return Objects.equals(id, comment.id) && Objects.equals(body, comment.body);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, body);
-    }
 }
