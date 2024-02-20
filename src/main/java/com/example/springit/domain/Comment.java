@@ -3,6 +3,7 @@ package com.example.springit.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,5 +21,6 @@ public class Comment {
     private String body;
 
     //link
-
+    @ManyToOne
+    private Link link;
 }
